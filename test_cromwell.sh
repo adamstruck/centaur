@@ -1,5 +1,20 @@
 #!/bin/bash
 
+printTravisHeartbeat() {
+    # Sleep one minute between printouts, but don't zombie for more than two hours
+    for ((i=0; i < 120; i++)); do
+        sleep 60
+        printf "…"
+    done &
+    TRAVIS_HEARTBEAT_PID=$!
+}
+
+killTravisHeartbeat() {
+    if [ -n "${TRAVIS_HEARTBEAT_PID+set}" ]; then
+        kill ${TRAVIS_HEARTBEAT_PID} || true
+    fi
+}
+
 shutdown() {
     cd "${INITIAL_DIR}"
     # FIXME: Make sure these logs are actually there
@@ -9,10 +24,12 @@ shutdown() {
     cat "${LOG_DIR}/centaur.log"
     # This will take out the backgrounded Cromwell instance
     pkill -P $$
+    killTravisHeartbeat
     exit "${EXIT_CODE}"
 }
 
 trap "shutdown" EXIT
+printTravisHeartbeat
 
 set -e
 
@@ -98,6 +115,8 @@ fi
 
 echo "Starting Cromwell, jar is ${CROMWELL_JAR}"
 echo "FOO"
+echo `find cromwell/target/scala-2.11 -name "cromwell-*.jar"`
+echo "BLAH"
 find cromwell/target/scala-2.11 -name "cromwell-*.jar" | xargs -I{} java "${CONFIG_STRING}" -jar {} server >> "${CROMWELL_LOG}" 2>&1 &
 
 # Build and run centaur
