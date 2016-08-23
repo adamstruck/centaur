@@ -2,6 +2,11 @@
 
 shutdown() {
     cd "${INITIAL_DIR}"
+    # FIXME: Make sure these logs are actually there
+    echo "CROMWELL LOG"
+    cat "${LOG_DIR}/cromwell.log"
+    echo "CENTAUR LOG"
+    cat "${LOG_DIR}/centaur.log"
     # This will take out the backgrounded Cromwell instance
     pkill -P $$
     exit "${EXIT_CODE}"
