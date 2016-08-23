@@ -97,7 +97,7 @@ if [[ -n ${CROMWELL_BRANCH} ]]; then
 fi
 
 echo "Starting Cromwell, jar is ${CROMWELL_JAR}"
-java "${CONFIG_STRING}" -jar "${CROMWELL_JAR}" server >> "${CROMWELL_LOG}" 2>&1 &
+find . -name "cromwell/target/scala-2.11/cromwell-*.jar" | xargs -I{} java "${CONFIG_STRING}" -jar {} server >> "${CROMWELL_LOG}" 2>&1 &
 
 # Build and run centaur
 cd "${RUN_DIR}"
