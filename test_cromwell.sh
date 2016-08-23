@@ -115,7 +115,8 @@ fi
 
 echo "Starting Cromwell, jar is ${CROMWELL_JAR}"
 echo "FOO"
-echo `find cromwell/target/scala-2.11 -name "cromwell-*.jar"`
+JAR=`find cromwell/target/scala-2.11 -name "cromwell-*.jar"`
+java -jar ${JAR}
 echo "BLAH"
 find cromwell/target/scala-2.11 -name "cromwell-*.jar" | xargs -I{} java "${CONFIG_STRING}" -jar {} server >> "${CROMWELL_LOG}" 2>&1 &
 
