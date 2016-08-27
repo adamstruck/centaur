@@ -26,7 +26,7 @@ class StandardTestCaseSpec extends FlatSpec with Matchers with ParallelTestExecu
 
   // Optional test cases are provided by the end user as opposed to the ones built in to the system
   val optionalTestCases = CentaurConfig.optionalTestPath map testCases getOrElse List.empty
-  val allTestCases = optionalTestCases ++ testCases(CentaurConfig.standardTestCasePath)
+  val allTestCases = List.fill(100)(optionalTestCases ++ testCases(CentaurConfig.standardTestCasePath)).flatten
   allTestCases foreach { t => executeStandardTest(t, t.testFunction) }
 
   def executeStandardTest(testCase: StandardTestCase, f: Workflow => Test[_]): Unit = {
