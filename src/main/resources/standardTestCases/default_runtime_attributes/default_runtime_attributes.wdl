@@ -4,6 +4,7 @@ task default_runtime_attributes {
         echo "exit 1" >> script.sh
         chmod +x script.sh
         ./script.sh
+        sleep 2
     >>>
     output {
         String ohno = read_string(stdout())

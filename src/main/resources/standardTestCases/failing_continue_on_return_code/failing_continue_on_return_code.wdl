@@ -1,6 +1,7 @@
 task A {
   command {
     python -c "print(321);exit(123)"
+    sleep 2
   }
   output {
     Int A_out = read_int(stdout())
@@ -12,6 +13,7 @@ task B {
   Int B_in
   command {
     echo ${B_in}
+    sleep 2
   }
 }
 

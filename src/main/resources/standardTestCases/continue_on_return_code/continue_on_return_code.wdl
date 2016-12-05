@@ -4,6 +4,7 @@ task continueOnRC1 {
         echo "exit 1" >> script.sh
         chmod +x script.sh
         ./script.sh
+        sleep 2
     >>>
     output {
         File ohno = stdout()
@@ -20,6 +21,7 @@ task continueOnRC2 {
         echo "exit 12" >> script.sh
         chmod +x script.sh
         ./script.sh
+        sleep 2
     >>>
     output {
         String ohno = read_string(stdout())
@@ -36,6 +38,7 @@ task continueOnRC3 {
         echo "exit 123" >> script.sh
         chmod +x script.sh
         ./script.sh
+        sleep 2
     >>>
     output {
         String ohno = read_string(stdout())
@@ -52,6 +55,7 @@ task finisher {
     String in3
     command <<<
        cat ${in1} && echo ${in2} && wc -l <<< "${in3}"
+       sleep 2
     >>>
     output {
         String finished = read_string(stdout())

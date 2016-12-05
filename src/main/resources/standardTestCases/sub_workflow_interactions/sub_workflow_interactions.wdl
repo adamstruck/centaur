@@ -6,6 +6,7 @@ task hello {
   command {
     echo "Hello ${addressee}!" > hello
     wc -w < hello > count
+    sleep 2
   }
   runtime {
       docker: "ubuntu:latest"
@@ -20,6 +21,7 @@ task read {
     Array[File] files
     command {
         cat ${sep=' ' files}
+        sleep 2
     }
     runtime {
         docker: "ubuntu:latest"

@@ -3,6 +3,7 @@ task do_nothing {
 
   command {
     echo "no-op"
+    sleep 2
   }
   output {
     String o = read_string(stdout())
