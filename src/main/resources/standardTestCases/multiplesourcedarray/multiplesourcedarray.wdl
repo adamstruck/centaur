@@ -3,7 +3,7 @@ task source {
     command {
         sleep $delay
         echo blah
-        sleep 2
+        #sleep 2
     }
     output {
         String result = read_string(stdout())
@@ -16,7 +16,7 @@ task consume {
     Array[String] in_file
     command {
         echo ${sep=' ' in_file}
-        sleep 2
+        #sleep 2
     }
     output {
         String out = read_string(stdout())
@@ -28,7 +28,7 @@ task consumeFiles {
     Array[File] in_file
     command {
         cat ${sep='; cat ' in_file}
-        sleep 2
+        #sleep 2
     }
     output {
         String x = read_string(stdout())

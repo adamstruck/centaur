@@ -3,7 +3,7 @@ task hello {
 
   command {
     echo "hello ${default = "default value" person}"
-    sleep 2
+    #sleep 2
   }
 
   runtime { docker: "ubuntu:latest" }
@@ -18,7 +18,7 @@ task hello_no_default {
 
   command {
     echo "hello ${person}"
-    sleep 2
+    #sleep 2
   }
 
   runtime { docker: "ubuntu:latest" }

@@ -2,7 +2,7 @@ task reverse {
   String var = "racecar"
   command {
    echo "$var | rev"
-   sleep 2
+   #sleep 2
   }
   output {
     String done = read_string(stdout())

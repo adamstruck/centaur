@@ -2,7 +2,7 @@ task hello {
   String addressee
   command {
     echo "Hello ${addressee}!"
-    sleep 2
+    #sleep 2
   }
   runtime {
     docker: "ubuntu:latest"

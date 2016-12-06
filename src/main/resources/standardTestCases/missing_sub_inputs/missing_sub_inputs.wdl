@@ -7,7 +7,7 @@ task tail {
    File inFile
    command {
       tail ${inFile}
-      sleep 2
+      #sleep 2
    }
    output {
      String tailOut = read_string(stdout())

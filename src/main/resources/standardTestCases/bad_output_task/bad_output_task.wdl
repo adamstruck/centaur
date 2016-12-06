@@ -1,7 +1,7 @@
 task bad {
   command {
     echo "hello" > a
-    sleep 2
+    #sleep 2
   }
 
   runtime {

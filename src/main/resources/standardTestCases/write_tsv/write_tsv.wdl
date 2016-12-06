@@ -5,7 +5,7 @@ task a2f {
   command {
     cat ${write_tsv(strings)} > f0
     cat ${tsv} > f1
-    sleep 2
+    #sleep 2
   }
 
   runtime {

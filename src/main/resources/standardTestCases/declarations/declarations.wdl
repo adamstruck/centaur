@@ -1,7 +1,7 @@
 task make_a_file {
   command {
     echo "first line\nsecond line\nthird line" > canned
-    sleep 2
+    #sleep 2
   }
   output {
     File a_file = "canned"
@@ -15,7 +15,7 @@ task cat {
 
   command {
     cat ${flags} ${file}
-    sleep 2
+    #sleep 2
   }
 
   runtime { docker: "ubuntu:latest" }
@@ -32,7 +32,7 @@ task cgrep {
 
   command {
     grep '${pattern}' ${in_file} | wc -l
-    sleep 2
+    #sleep 2
   }
 
   runtime { docker: "ubuntu:latest" }

@@ -6,7 +6,7 @@ task hello {
   command {
     echo "Hello ${addressee}!" > hello
     wc -w < hello > count
-    sleep 2
+    #sleep 2
   }
   runtime {
       docker: "ubuntu:latest"

@@ -7,7 +7,7 @@ task blah {
       return "b"
     print('{}{}'.format(a(),b()))
     CODE
-    sleep 2
+    #sleep 2
   >>>
 
   output {
