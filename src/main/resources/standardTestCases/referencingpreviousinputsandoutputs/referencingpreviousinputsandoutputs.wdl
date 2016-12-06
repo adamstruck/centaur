@@ -15,7 +15,7 @@ task golden_pie {
   }
 
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 }
 

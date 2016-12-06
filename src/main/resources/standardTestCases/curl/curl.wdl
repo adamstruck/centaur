@@ -9,7 +9,7 @@ task url_grab {
         File progressBar = stderr()
     }
     runtime {
-        docker: "tutum/curl:latest"
+        #docker: "tutum/curl:latest"
         failOnStderr: false
     }
 }
@@ -22,7 +22,7 @@ task news_reader {
       #sleep 2
     }
     output { Int news_size = read_int(stdout()) }
-    runtime { docker: "ubuntu:latest" }
+    runtime { #docker: "ubuntu:latest" }
 }
 
 workflow curl_wf {

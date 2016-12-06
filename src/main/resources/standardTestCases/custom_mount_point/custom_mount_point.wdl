@@ -17,7 +17,7 @@ task t {
   }
 
   runtime {
-    docker: "ubuntu:" + version
+    #docker: "ubuntu:" + version
     disks: "local-disk 20 SSD, /some/mnt 20 SSD"
   }
 }

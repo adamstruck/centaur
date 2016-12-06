@@ -6,7 +6,7 @@ task make_a_file {
   output {
     File a_file = "canned"
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task cat {
@@ -18,7 +18,7 @@ task cat {
     #sleep 2
   }
 
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 
   output {
     File procs = stdout()
@@ -35,7 +35,7 @@ task cgrep {
     #sleep 2
   }
 
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 
   output {
     Int count = read_int(stdout())

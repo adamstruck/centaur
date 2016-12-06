@@ -5,7 +5,7 @@ task makeGcsFileInJes {
   }
 
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 
   output {

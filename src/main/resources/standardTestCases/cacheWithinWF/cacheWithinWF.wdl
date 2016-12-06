@@ -9,7 +9,7 @@ task one {
 		Int rCopy = radius
     }
     runtime {
-       docker: "ubuntu:latest"
+       #docker: "ubuntu:latest"
     }
 }
 
@@ -27,7 +27,7 @@ task two{
 		Int rSquaredCopy = r2
    }
    runtime {
-      docker: "ubuntu:latest"
+      #docker: "ubuntu:latest"
    }
 }
 

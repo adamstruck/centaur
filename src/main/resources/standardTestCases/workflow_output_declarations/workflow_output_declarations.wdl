@@ -5,7 +5,7 @@ task hello {
     #sleep 2
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
   output {
     String salutation = read_string(stdout())

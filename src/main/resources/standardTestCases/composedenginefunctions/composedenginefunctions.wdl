@@ -16,7 +16,7 @@ task composeEngineFunctions {
     String y = read_int(stderr()) + x + read_string(blah)
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 }
 

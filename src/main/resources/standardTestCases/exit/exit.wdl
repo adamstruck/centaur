@@ -4,7 +4,7 @@ task exitTask {
     #sleep 2
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
     continueOnReturnCode: 5
   }
 }

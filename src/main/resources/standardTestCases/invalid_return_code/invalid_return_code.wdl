@@ -7,7 +7,7 @@ task invalid_return_code {
         String successful = read_string(stdout())
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
         continueOnReturnCode: 1
     }
 }

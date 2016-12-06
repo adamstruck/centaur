@@ -6,7 +6,7 @@ task boundToFail {
    String badOutput = read_string(stdout())
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 }
 
@@ -17,7 +17,7 @@ task shouldNotStart {
      #sleep 2
     }
     runtime {
-       docker: "ubuntu:latest"
+       #docker: "ubuntu:latest"
     }
 }
 
@@ -29,7 +29,7 @@ task shouldSucceed {
      #sleep 2
     }
     runtime {
-       docker: "ubuntu:latest"
+       #docker: "ubuntu:latest"
     }
     output {
      String stalling = read_string(stdout())
@@ -43,7 +43,7 @@ task delayedTask {
      #sleep 2
     }
     runtime {
-       docker: "ubuntu:latest"
+       #docker: "ubuntu:latest"
     }
     output {
      String notUsed = read_string(stdout())

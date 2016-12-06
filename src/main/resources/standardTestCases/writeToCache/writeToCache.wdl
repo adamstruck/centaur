@@ -6,7 +6,7 @@ task print {
   output {
     File tongueTwister = stdout()
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task grep {
@@ -20,7 +20,7 @@ task grep {
     Int count = read_int(stdout())
     File redirect = input_file
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task grepAgain {
@@ -34,7 +34,7 @@ task grepAgain {
     Int count = read_int(stdout())
     File redirect = input_file
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 workflow writeToCache {

@@ -5,7 +5,7 @@ task array_literal_locations_i {
       echo ${sep=":" array} > out
       #sleep 2
     }
-    runtime { docker: "ubuntu:latest" }
+    runtime { #docker: "ubuntu:latest" }
     output { File out = "out" }
 }
 
@@ -16,7 +16,7 @@ task array_literal_locations_ii {
       #sleep 2
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
         continueOnReturnCode: [ 0, 1, 2 ]
     }
     output { File out = "out" }

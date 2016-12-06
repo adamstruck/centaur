@@ -13,7 +13,7 @@ task echo {
     Int two = read_int("${ one + 1 }.txt")
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 }
 

@@ -6,7 +6,7 @@ task subdirTask {
     #sleep 2
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
   output {
     File outputFile = "subdir/subFile"

@@ -11,7 +11,7 @@ task mkFile {
     #sleep 2
   }
   output { File out = "out.txt" }
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 }
 
 task consumeFile {
@@ -23,7 +23,7 @@ task consumeFile {
     #sleep 2
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
   output {
     File out_interpolation = "${out_name}"

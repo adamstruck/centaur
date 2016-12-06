@@ -5,7 +5,7 @@ task bad {
   }
 
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 
   output {

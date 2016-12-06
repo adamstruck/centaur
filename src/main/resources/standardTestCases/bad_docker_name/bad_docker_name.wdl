@@ -8,7 +8,7 @@ task hello {
     String salutation = read_string(stdout())
   }
   runtime {
-   docker: "/fauxbuntu:nosuchversion"
+   #docker: "/fauxbuntu:nosuchversion"
   }
 }
 

@@ -11,7 +11,7 @@ task StringSpam {
     done
   >>>
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
   output {
     Array[String] outArray = read_lines("file.txt")
@@ -39,7 +39,7 @@ task MatrixRotation {
       >>>
 
     runtime {
-      docker: "python:2.7"
+      #docker: "python:2.7"
       memory: "1 GB"
       preemptible: 3
     }

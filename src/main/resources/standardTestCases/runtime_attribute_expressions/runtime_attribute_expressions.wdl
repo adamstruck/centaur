@@ -13,7 +13,7 @@ task expression {
 
   runtime {
     # Not a literal WdlString
-    docker: "ubuntu:" + version
+    #docker: "ubuntu:" + version
   }
 }
 

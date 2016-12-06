@@ -5,7 +5,7 @@ task echo {
   output {
     File out = stdout()
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task find {
@@ -17,7 +17,7 @@ task find {
   output {
     Int count = read_int(stdout())
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 workflow readFromCache {

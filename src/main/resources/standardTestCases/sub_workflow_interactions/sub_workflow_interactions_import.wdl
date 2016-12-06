@@ -5,7 +5,7 @@ task countTo {
         #sleep 2
     }
     runtime {
-          docker: "ubuntu:latest"
+          #docker: "ubuntu:latest"
       }
     output {
         File range = stdout()
@@ -19,7 +19,7 @@ task filterEvens {
         #sleep 2
     }
     runtime {
-          docker: "ubuntu:latest"
+          #docker: "ubuntu:latest"
       }
     output {
         File evens = "evens"

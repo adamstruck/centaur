@@ -8,7 +8,7 @@ task a {
     File out = stdout()
     File err = stderr()
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task b {
@@ -20,7 +20,7 @@ task b {
   output {
     Int out = read_int(stdout())
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 workflow stdout_stderr_passing {

@@ -8,7 +8,7 @@ task getAverage {
         Float average = read_float(stdout())
     }
     runtime {
-       docker: "ubuntu:latest"
+       #docker: "ubuntu:latest"
     }
 }
 
@@ -23,7 +23,7 @@ task heightProduct{
 		Float trapezoidalArea = read_float(stdout())
    }
    runtime {
-      docker: "ubuntu:latest"
+      #docker: "ubuntu:latest"
    }
 }
 

@@ -8,7 +8,7 @@ task scoping_task {
     }
 
     output { String out = read_string(stdout()) }
-    runtime { docker: "ubuntu:latest" }
+    runtime { #docker: "ubuntu:latest" }
 }
 
 workflow scoping_wf {

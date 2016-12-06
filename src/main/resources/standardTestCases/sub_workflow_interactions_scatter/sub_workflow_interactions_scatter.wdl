@@ -9,7 +9,7 @@ task hello {
     #sleep 2
   }
   runtime {
-      docker: "ubuntu:latest"
+      #docker: "ubuntu:latest"
   }
   output {
     String salutation = read_string("hello")
@@ -24,7 +24,7 @@ task read {
         #sleep 2
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
     }
     output {
         String read_out = read_string(stdout())

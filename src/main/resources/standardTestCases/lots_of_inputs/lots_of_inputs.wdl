@@ -8,7 +8,7 @@ task do_nothing {
     String o = read_string(stdout())
   }
   runtime {
-    docker: "python:latest"
+    #docker: "python:latest"
   }
 }
 
@@ -27,7 +27,7 @@ task make_array {
     Array[File] a = glob("file-*")
   }
   runtime {
-    docker: "python:latest"
+    #docker: "python:latest"
   }
 }
 

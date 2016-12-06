@@ -11,7 +11,7 @@ task f2a {
   output {
     Array[String] out = read_lines(stdout())
   }
-  runtime {docker:"ubuntu:latest"}
+  runtime {#docker:"ubuntu:latest"}
 }
 
 task a2f {
@@ -26,7 +26,7 @@ task a2f {
     File out = stdout()
     String x = read_string(out)
   }
-  runtime {docker:"ubuntu:latest"}
+  runtime {#docker:"ubuntu:latest"}
 }
 
 workflow write_lines {

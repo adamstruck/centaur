@@ -9,7 +9,7 @@ task a2f {
   }
 
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 
   output {

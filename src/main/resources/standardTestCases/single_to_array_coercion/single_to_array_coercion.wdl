@@ -6,7 +6,7 @@ task singleFile {
   output {
     File out = stdout()
   }
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 }
 
 task listFiles {
@@ -18,7 +18,7 @@ task listFiles {
   output {
     String result = read_string(stdout())
   }
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 }
 
 workflow oneToMany {

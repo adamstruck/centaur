@@ -5,7 +5,7 @@ task t {
         #sleep 2
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
     }
     output {
         String o = read_string(stdout())

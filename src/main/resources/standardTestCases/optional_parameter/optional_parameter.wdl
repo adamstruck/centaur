@@ -6,7 +6,7 @@ task hello {
     #sleep 2
   }
 
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 
   output {
     String greeting = read_string(stdout())
@@ -21,7 +21,7 @@ task hello_no_default {
     #sleep 2
   }
 
-  runtime { docker: "ubuntu:latest" }
+  runtime { #docker: "ubuntu:latest" }
 
   output {
     String greeting = read_string(stdout())

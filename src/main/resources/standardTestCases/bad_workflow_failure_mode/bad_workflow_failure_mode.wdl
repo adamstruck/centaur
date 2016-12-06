@@ -8,7 +8,7 @@ task hello {
     String salutation = read_string(stdout())
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
     cpu: 1
   }
 }

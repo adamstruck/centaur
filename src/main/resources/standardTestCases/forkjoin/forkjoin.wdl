@@ -14,7 +14,7 @@ task mkFile {
   output {
     File numbers = stdout()
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task grep {
@@ -27,7 +27,7 @@ task grep {
   output {
     Int count = read_int(stdout())
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task wc {
@@ -39,7 +39,7 @@ task wc {
   output {
     Int count = read_int(stdout())
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 task join {
@@ -52,7 +52,7 @@ task join {
   output {
     Int proportion = read_int(stdout())
   }
-  runtime {docker: "ubuntu:latest"}
+  runtime {#docker: "ubuntu:latest"}
 }
 
 workflow forkjoin {

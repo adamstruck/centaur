@@ -8,7 +8,7 @@ task hey {
     String lyrics = read_string(stdout())
   }
   runtime {
-    docker: "ubuntu:latest"
+    #docker: "ubuntu:latest"
   }
 }
 

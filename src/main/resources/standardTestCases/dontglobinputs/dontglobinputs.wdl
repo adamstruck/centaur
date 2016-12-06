@@ -5,7 +5,7 @@ task createfile {
         #sleep 2
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
     }
     output {
         File out = "somefile.unique.txt"
@@ -22,7 +22,7 @@ task globtask {
         #sleep 2
     }
     runtime {
-        docker: "ubuntu:latest"
+        #docker: "ubuntu:latest"
     }
     output {
         Array[File] outs = glob("*.unique.txt")
@@ -36,7 +36,7 @@ task length {
         #sleep 2
     }
     runtime {
-            docker: "ubuntu:latest"
+            #docker: "ubuntu:latest"
         }
     output {
         Int size = read_int(stdout())

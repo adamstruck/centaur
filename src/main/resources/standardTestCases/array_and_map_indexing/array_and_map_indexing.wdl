@@ -6,7 +6,7 @@ task echo_str {
   }
   output { String o = read_string(stdout()) }
   runtime { 
-   docker: "ubuntu:latest"
+   #docker: "ubuntu:latest"
   }
 }
 
@@ -18,7 +18,7 @@ task echo_int {
   }
   output { Int o = read_int(stdout()) }
   runtime {
-   docker: "ubuntu:latest"
+   #docker: "ubuntu:latest"
   }
 }
 
