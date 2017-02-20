@@ -113,7 +113,10 @@ object Operations {
           }
         }
         cleanUpImports(workflow)
-        CromwellClient.metadata(workflow).map(expectedMetadata.diff(_, workflow.id, cacheHitUUID)).map(checkDiff)
+        val recMetadata = CromwellClient.metadata(workflow)
+        val z = recMetadata.map(expectedMetadata.diff(_, workflow.id, cacheHitUUID)).map(checkDiff)
+        if (z.isFailure && recMetadata.isSuccess) { System.out.println(recMetadata.get.value)}
+        z
       }
 
       override def run: Try[Unit] = {
