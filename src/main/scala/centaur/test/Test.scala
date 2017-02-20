@@ -93,9 +93,13 @@ object Operations {
       import scala.concurrent.duration._
 
       f match {
-        case Failure(_) if OffsetDateTime.now().isBefore(startTime.plusSeconds(timeout.toSeconds)) =>
+        case Failure(regerts) if OffsetDateTime.now().isBefore(startTime.plusSeconds(timeout.toSeconds)) =>
+          System.out.println(s"JGG: Retrying ${workflow.workflow.testName} due to: ${regerts.getLocalizedMessage}")
           blocking { Thread.sleep(1.second.toMillis) }
           eventually(startTime, timeout)(f)
+        case Failure(blah) =>
+          System.out.println(s"JGG: Caught failure and not retrying: ${workflow.workflow.testName} due to - ${blah.getLocalizedMessage}")
+          f
         case t => t
       }
     }
