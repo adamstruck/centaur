@@ -19,21 +19,21 @@ object CallCacheSpec {
 class CallCacheSpec extends FlatSpec with Matchers with ParallelTestExecution {
   import CallCacheSpec._
 
-  "readFromCacheOff" should "not use call cache reading" in {
+  "readFromCacheOff" should "not use call cache reading" ignore {
     Workflow.fromPath(ReadFromCacheTest) match {
       case Valid(w) => TestFormulas.runCachingTurnedOffWorkflow(w).run.get
       case Invalid(e) => fail(s"Could not read readFromCache test:\n -${e.toList.mkString("\n-")}")
     }
   }
 
-  "cacheBetweenWf" should "successfully call cache between two workflows" in {
+  "cacheBetweenWf" should "successfully call cache between two workflows" ignore {
     Workflow.fromPath(CacheBetweenWf) match {
       case Valid(w) => TestFormulas.runSequentialCachingWorkflows(w, w)
       case Invalid(e) => fail(s"Could not read cacheWithinWf test:\n - ${e.toList.mkString("\n- ")}")
     }
   }
 
-  "floatingTags" should "not hit the cache when tasks have floating docker tags" in {
+  "floatingTags" should "not hit the cache when tasks have floating docker tags" ignore {
     Workflow.fromPath(FloatingTagsTest) match {
       case Valid(w) => TestFormulas.runCachingTurnedOffWorkflow(w).run.get
       case Invalid(e) => fail(s"Could not read floatingTags test:\n -${e.toList.mkString("\n-")}")

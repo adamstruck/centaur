@@ -22,6 +22,7 @@ class StandardTestCaseSpec extends FlatSpec with Matchers with ParallelTestExecu
       case Valid(l) => l
       case Invalid(e) => throw new IllegalStateException("\n" + e.toList.mkString("\n") + "\n")
     }
+    List.empty
   }
 
   val cromwellBackends = CromwellBackendsCompanion.supportedBackends
