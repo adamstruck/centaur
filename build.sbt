@@ -4,7 +4,8 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
-val akkaV = "2.4.11" // Note: akka-http branches from akkaV after 2.4.11
+val akkaV = "2.4.17"
+val akkaHttpV = "10.0.5"
 
 /***
  * by default log buffering is set to true in sbt, which means
@@ -21,8 +22,8 @@ libraryDependencies ++= Seq(
     exclude("org.typelevel", "cats-laws_2.11")
     exclude("org.typelevel", "cats-kernel-laws_2.11"),
   "com.typesafe.akka" %% "akka-actor" % akkaV,
-  "com.typesafe.akka" %% "akka-http-experimental" % akkaV,
-  "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaV,
+  "com.typesafe.akka" %% "akka-http" % akkaHttpV,
+  "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpV,
   "com.github.pathikrit" %% "better-files" % "2.13.0",
   //---------- Test libraries -------------------//
   "org.scalatest" %% "scalatest" % "3.0.1" % Test,
