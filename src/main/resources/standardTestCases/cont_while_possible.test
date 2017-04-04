@@ -1,6 +1,6 @@
 name: cont_while_possible
 testFormat: workflowfailure
-ignore: true
+ignore: false
 
 files {
   wdl: cont_while_possible/cont_while_possible.wdl
