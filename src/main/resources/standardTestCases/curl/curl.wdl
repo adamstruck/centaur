@@ -2,6 +2,7 @@ task url_grab {
     String url
     command <<<
         curl -# ${url} > news
+        sleep 2
     >>>
     output {
         File news = "news"
@@ -18,6 +19,7 @@ task news_reader {
 
     command { 
       wc -l < ${news}
+      sleep 2
     }
     output { Int news_size = read_int(stdout()) }
     runtime { docker: "ubuntu:latest" }

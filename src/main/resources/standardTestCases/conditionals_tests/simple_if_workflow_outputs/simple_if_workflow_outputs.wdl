@@ -1,6 +1,8 @@
 task runMe {
   command {
     echo "done"
+
+    sleep 2
   }
   output {
     String s = read_string(stdout())

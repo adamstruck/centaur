@@ -28,6 +28,8 @@ task increment {
 
   command {
     echo $(( ${i} + 1 ))
+
+    sleep 2
   }
   runtime {
     docker: "ubuntu:latest"
@@ -43,6 +45,8 @@ task sum {
 
   command {
     echo $(( ${i} + ${j} ))
+
+    sleep 2
   }
   runtime {
     docker: "ubuntu:latest"

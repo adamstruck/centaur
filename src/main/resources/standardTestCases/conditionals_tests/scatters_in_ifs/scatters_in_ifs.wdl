@@ -2,6 +2,8 @@ task mirror {
   Int i
   command {
     echo ${i}
+
+    sleep 2
   }
   output {
     Int out = read_int(stdout())

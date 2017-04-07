@@ -1,6 +1,6 @@
 task make_file {
     command {
-        echo woohoo > out.txt
+        echo woohoo > out.txt && sleep 2
     }
     runtime {
         docker: "ubuntu@sha256:71cd81252a3563a03ad8daee81047b62ab5d892ebbfbf71cf53415f29c130950"
@@ -26,7 +26,7 @@ task read_file {
 task delete_file_in_gcs {
     String file_path
     command {
-        gsutil rm ${file_path}
+        gsutil rm ${file_path} && sleep 2
     }
     runtime {
         docker: "google/cloud-sdk@sha256:fb904276e8a902ccd9564989d9222bdfbe37ffcd7f9989ca7e24b4019a9b4b6b"
@@ -41,7 +41,7 @@ task delete_file_local {
     String file_path = sub(file_path_raw, "file://", "")
 
     command {
-        rm ${file_path}
+        rm ${file_path} && sleep 2
     }
     output {
         Boolean done = true

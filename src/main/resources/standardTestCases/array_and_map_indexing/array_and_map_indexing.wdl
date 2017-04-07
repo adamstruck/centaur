@@ -2,6 +2,7 @@ task echo_str {
   String s
   command { 
     echo ${s}
+    sleep 2
   }
   output { String o = read_string(stdout()) }
   runtime { 
@@ -13,6 +14,7 @@ task echo_int {
   Int i
   command { 
     echo ${i}
+    sleep 2
   }
   output { Int o = read_int(stdout()) }
   runtime {

@@ -3,6 +3,7 @@ task array_literal_locations_i {
     Array[Int] array
     command { 
       echo ${sep=":" array} > out
+      sleep 2
     }
     runtime { docker: "ubuntu:latest" }
     output { File out = "out" }
@@ -12,6 +13,7 @@ task array_literal_locations_ii {
     Int x
     command { 
       echo ${x} > out
+      sleep 2
     }
     runtime {
         docker: "ubuntu:latest"

@@ -4,7 +4,7 @@ task f2a {
   File i
 
   command {
-    cat ${i}
+    cat ${i} && sleep 2
   }
 
   output {
@@ -17,7 +17,7 @@ task a2f {
   Array[String] strings
 
   command {
-    cat ${write_lines(strings)}
+    cat ${write_lines(strings)} && sleep 2
   }
 
   output {
